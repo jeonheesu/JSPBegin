@@ -11,9 +11,9 @@
 </head>
 <body>
 
-	<form id="loginForm" >
+	<form id="loginForm" action="neoLoginProcess.jsp" method="post" >
 
-
+ 
 		<table border="1">
 
 			<tr>

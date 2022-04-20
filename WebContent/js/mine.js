@@ -84,6 +84,8 @@ $(function() {
 	});
 
 	$('#loginBtn').click(function(e) {
+		
+		var formTag = $('#loginForm');
 
 		var user_id = $('#user_id').val()
 		var user_pw = $('#user_pw').val()
@@ -98,8 +100,16 @@ $(function() {
 			alert('비밀번호를 입력해주세요');
 			return;
 		}
+		
+		
+		formTag.submit();
+		
 
-		$.ajax({
+
+
+
+   // ajax로 로그인중복 체크 하는 방법
+		/*$.ajax({
 
 			url: "newLoginProcess.jsp",
 			type: 'post',
@@ -124,10 +134,81 @@ $(function() {
 					"error:" + error);
 			}
 		});
-
+*/
 
 
 	})
+	
+	//board js 
+
+		
+	$('#boardRegBtn').click(function(){
+	
+	
+	 
+	 var boardRegForm = $('#boardRegForm');
+    var  bTitle = $('#bTitle').val();
+    var  bContent = $('#bContent').val();
+    var  bWriter = $('#bWriter').val();
+
+ if(bTitle == null || bTitle.trim() == ""){
+	alert('제목을 적어주셔야 합니다.');
+	return;
+}
+ 
+if(bContent== null || bContent.trim() == ""){
+	alert('내용을 적어주셔야 합니다.');
+	return;
+	}
+	
+	if(bWriter== null || bWriter.trim() == ""){
+	alert('작성자를 적어주셔야 합니다.');
+	return;
+	}
+	
+	boardRegForm.submit();
+	
+	
+	
+	
+	
+	});
+	
+  
+
+$('#boardDelete').click(function(){
+	
+
+	 console.log("1");
+	
+
+
+
+})
+
+$('#modifyBtn').click(function(){
+ 
+
+   var modifyForm = $('#modifyForm');
+   
+    var bTitle = $('#bTitle').val();
+    var bContent = $('#bContent').val();
+  
+  
+   if(bTitle == null || bTitle.trim() == ""){
+	alert('제목을 적어주셔야 합니다.');
+	return;
+}
+ 
+    if(bContent== null || bContent.trim() == ""){
+	alert('내용을 적어주셔야 합니다.');
+	return;
+	}
+	
+	modifyForm.submit();
+
+
+})
 
 
 
